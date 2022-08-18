@@ -65,7 +65,18 @@
             Ефективні рішення для<br />
             вашого бізнесу
           </h1>
-          <button class="button-main" type="button">Замовити послугу</button>
+          <button data-modal-open class="button-main" type="button">
+            Замовити послугу
+          </button>
+        </div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button data-modal-close class="modal-close">
+              <svg>
+                <use href="./images/close (1).svg"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
       <!--особенности-->
@@ -160,6 +171,9 @@
                 width="370"
                 height="294"
               />
+              <div class="specification-thumb">
+                <p class="lable">Десктопні додатки</p>
+              </div>
             </li>
             <li class="item">
               <img
@@ -169,6 +183,9 @@
                 width="370"
                 height="294"
               />
+              <div class="specification-thumb">
+                <p class="lable">Мобільні додатки</p>
+              </div>
             </li>
             <li class="item">
               <img
@@ -178,6 +195,9 @@
                 width="370"
                 height="294"
               />
+              <div class="specification-thumb">
+                <p class="lable">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -601,5 +621,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
