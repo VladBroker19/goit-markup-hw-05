@@ -23,6 +23,10 @@
   --border-header-color: #ececec;
   --border-portfoliocard-color: #eeeeee;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --backdrop-color: rgba(0, 0, 0, 0.2);
+  --close-button-color: rgba(0, 0, 0, 0.1);
+  --specification-thumb-color: rgba(47, 48, 58, 0.8);
+  --workthumb-background-color: rgba(33, 150, 243, 0.9);
 }
 .page {
   background-color: var(--white-color);
@@ -209,7 +213,44 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
+  background-color: var(--backdrop-color);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--white-color);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  transition: transform 250ms var(--timing-function);
+}
+.modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: inline-block;
+  border: 1px solid var(--close-button-color);
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white-color);
+}
 /* button */
 .button-main {
   display: inline-block;
@@ -304,7 +345,7 @@ button {
   width: 100%;
   height: 70px;
   align-items: center;
-  background-color: rgba(47, 48, 58, 0.8);
+  background-color: var(--specification-thumb-color);
 }
 .lable {
   margin: 0;
@@ -488,7 +529,7 @@ button {
   transform: translateY(100%);
   transition: transform 250ms var(--timing-function);
 
-  background-color: rgba(33, 150, 243, 0.9);
+  background-color: var(--workthumb-background-color);
 }
 .work-thumb:hover::before {
   transform: translateY(0);
